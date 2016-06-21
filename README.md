@@ -1,4 +1,4 @@
-# eyesfreeyoga
+# Eyes-free yoga
 
 ## Installation for developers
 
