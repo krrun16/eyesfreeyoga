@@ -1,0 +1,5976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8121846D-923E-4BB0-8647-30DA753D156E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Samples.Kinect.EyesFreeYoga</RootNamespace>
+    <AssemblyName>Eyes Free Yoga</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>eyes-free-yoga.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>EDE4ACCD689E7638FB4B54652DD16D3EA0156797</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX.AudioVideoPlayback, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.AudioVideoPlayback.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SDKs\Kinect\v1.8\Assemblies\Microsoft.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Speech, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft SDKs\Speech\v11.0\Assembly\Microsoft.Speech.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chair.cs" />
+    <Compile Include="Exercise.cs" />
+    <Compile Include="Exercise20.cs" />
+    <Compile Include="Exercise30.cs" />
+    <Compile Include="Exercise45.cs" />
+    <Compile Include="Exercise60.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TreeRight.cs" />
+    <Compile Include="ReverseWarriorLeft.cs" />
+    <Compile Include="WarriorIIRight.cs" />
+    <Compile Include="WarriorILeft.cs" />
+    <Compile Include="FileWriter.cs" />
+    <Compile Include="Tree.cs" />
+    <Compile Include="ReverseWarrior.cs" />
+    <Compile Include="WarriorII.cs" />
+    <Compile Include="WarriorI.cs" />
+    <Compile Include="MountainPose.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pose.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecordSkeleton_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.DirectX">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.DirectX.AudioVideoPlayback">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.DirectX.Direct3D">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Kinect">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Speech">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\core_good.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="eyes-free-yoga.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\eyes-free-yoga.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_2.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_3.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_4.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_5.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_6.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_7.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_level_8.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\legs_good.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_five_endurance.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arms_good.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kinect_not_plugged_in.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_five_consistency.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yoga_mat_instructions.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\after_music_plays.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy_for_trophy_case.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\learning_or_exercise.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_five_level.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level_up.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_one.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foot.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feet.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\over_three.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pose_with_feedback.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\when_you_hear.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\second_note.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\followed_the_directions.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moving_to_next.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feel_free.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bend_your_left_leg_further.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bend_your_legs_further.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bend_your_right_leg_further.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bring_arms_closer_to_head.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bring_left_arm_closer_to_head.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bring_right_arm_closer_to_head.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_at_least_a_foot.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_8_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_11_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_5_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_4_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_9_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_1_inch.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_7_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_6_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_10_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_3_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_2_inches.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\good_job.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_forward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_left.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_right.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lift_left_foot_off_ground.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lift_right_foot_off_ground.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lower_arms.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lower_left_arm.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lower_right_arm.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_feet_closer_together.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_feet_further_apart.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_your_hips_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knees_outward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_elbow_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_elbow_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_elbow_forward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align_feet_on_yoga_mat.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_hip_down.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_behind_ankle.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_forward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_left.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_left_stretch.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_wrist_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_wrist_forward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_elbow_forward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_elbow_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align_feet_on_yoga_mat_2.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_hip_down.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_forward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_right.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_right_stretch.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_wrist_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_wrist_foward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_wrists_backward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_wrists_forward.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rest_left_hand_on_left_leg.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rest_right_hand_on_right_leg.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_hips_left.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_hips_right.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_shoulders_left.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_shoulders_right.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_left_arm.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_left_leg.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_right_arm.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_right_leg.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_your_arms.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_your_legs.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engage_core_muscles.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twist_left.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twist_right.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_the_left.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_the_right.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forwards.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backwards.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\good_position.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_your.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workout.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workout_choice.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\say_workout_length.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\you_have_received.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\endurance_badges.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_5.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consistency_badges.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_5.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\performance_badges.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\well_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\well_5.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\well_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_first_endurance.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_first_consistency.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_first_performance.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_now_have.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_another_endurance.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_another_performance.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_another_consistency.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_on_level.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thank_you_for_playing.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_consistency_if.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_45.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_60.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_performance_if.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\and.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hour.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hours.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minute.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minutes.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_exit.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_pause.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_skip.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\until_next_level.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\you_have.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entering_trophy_case.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badges_only_exercise.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beginning_exercise.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beginning_learning.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\learning_stand.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_45.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_60.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_10 %282%29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_10 %283%29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_intro.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_intro.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_title.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_08a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_09a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_28.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_31.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_32.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_33.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_34.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_35.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_36.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_37.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_38.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_intro.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_04a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_15a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_28.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_31.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_32.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_33.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_34.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_35.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_title.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_04-old1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_11a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_13a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_27a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_28.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_29a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_31.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_32.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_09a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_24a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_28.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_31.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_08a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_09a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_intro.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_04a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_15a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_title.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_11a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_13a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_27a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_28.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_29a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_31.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_32.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_01.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_02.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_03.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_04.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_05.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_06.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_07.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_08.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_09.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_09a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_10.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_11.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_12.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_13.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_14.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_15.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_16.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_17.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_18.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_19.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_20.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_21.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_22.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_23.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_24.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_24a.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_25.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_26.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_27.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_28.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_30.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_31.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kinect_not_plugged_in.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_cat_cow_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_child_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_down_flow_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_downdog_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_mountain_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_stand_flow_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bound_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_bridge_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_corpse_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_exit_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_flow_bridge_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_happy_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_low_back_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_reclined_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30_thread_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_08a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_09a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_chair_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_28.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_31.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_32.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_33.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_34.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_35.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_36.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_37.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_cobra_38.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_corpse_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_exit_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_mountain_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reclined_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_04a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_15a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_reverse_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_28.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_31.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_32.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_33.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_34.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_stand_35.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_tree_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_11a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_13a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_27a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_28.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_29a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_31.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorI_32.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_09a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_24a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_28.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\45_warriorII_31.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bound_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_bridge_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_cat_cow_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_08a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_09a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_chair_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_child_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_corpse_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_down_flow_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_downdog_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_exit_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_happy_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_plank_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reclined_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_04a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_15a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_reverse_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_stand_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_tree_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_11a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_13a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_27a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_28.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_29a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_31.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorI_32.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_09a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_21.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_22.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_23.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_24a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_25.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_26.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_27.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_28.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60_warriorII_31.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\after_music_plays.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\after_the_tone_say.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align_feet_on_yoga_mat.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align_feet_on_yoga_mat_2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\and.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arms_good.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backwards.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badges_only_exercise.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beginning_exercise.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beginning_learning.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bend_your_left_leg_further.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bend_your_legs_further.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bend_your_right_leg_further.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bring_arms_closer_to_head.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bring_left_arm_closer_to_head.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bring_right_arm_closer_to_head.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_1_inch.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_2_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_3_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_4_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_5_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_6_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_7_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_8_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_9_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_10_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_11_inches.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\by_at_least_a_foot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_another_consistency.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_another_endurance.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_another_performance.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_first_consistency.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_first_endurance.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_first_performance.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_now_have.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congrats_on_level.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consistency_badges.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\core_good.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_consistency_if.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_45.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_endurance_if_60.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earn_performance_if.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\endurance_badges.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engage_core_muscles.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entering_trophy_case.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feel_free.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feet.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\followed_the_directions.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\for_your.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forwards.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\good_job.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\good_position.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\good_position-old1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hour.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hours.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kinect_not_plugged_in %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knees_outward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_forward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_left.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lean_right.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\learning_or_exercise.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\learning_stand.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\learning_stand-old1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\legs_good.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level_up.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lift_left_foot_off_ground.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lift_right_foot_off_ground.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lower_arms.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lower_left_arm.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lower_right_arm.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minute.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minutes.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_feet_closer_together.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_feet_further_apart.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_elbow_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_elbow_forward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_hip_down.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_behind_ankle.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_forward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_left.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_knee_left_stretch.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_wrist_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_left_wrist_forward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_elbow_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_elbow_forward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_hip_down.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_forward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_right.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_knee_right_stretch.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_wrist_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_right_wrist_foward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_wrists_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_wrists_forward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_your_hips_backward.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moving_to_next.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\over_three.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\performance_badges.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pose_with_feedback.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rest_left_hand_on_left_leg.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rest_right_hand_on_right_leg.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_hips_left.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_hips_right.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_shoulders_left.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_shoulders_right.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\say_workout_length.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\second_note.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_30.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_45.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_60.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starting_your.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_left_arm.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_left_leg.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_right_arm.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_right_leg.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_your_arms.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\straighten_your_legs.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thank_you_for_playing.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_exit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_pause.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_skip.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_the_left.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_the_right.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy_for_trophy_case.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twist_left.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twist_right.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_five_consistency.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_five_endurance.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_five_level.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\under_one.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\until_next_level.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\well_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\well_5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\well_10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\when_you_hear.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workout.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workout_choice.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yoga_mat_instructions.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\you_have.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\you_have_received.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
